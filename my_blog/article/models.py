@@ -1,3 +1,16 @@
 from django.db import models
 
 # Create your models here.
+class Article(models.Mode):
+	title=models.CharField(max_length=100)#博客题目
+	category=models.CharField(max_length=50,blank=True)
+	date_time=models>DateTimeField(auto_now_add=True)
+	content=models.TextField(blank=True,null=True) #博客文章正文
+	
+
+	def __unicode__(self):
+		return self.title
+
+	class Mete:#按时间下降排序
+		ordering=['-date_time']
+		
